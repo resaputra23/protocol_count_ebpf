@@ -36,7 +36,7 @@ int get_packet_protocol(struct xdp_md *ctx) {
 
     //moving pointer ke header selanjutnya yaitu IP header
     struct iphdr *ip = data + sizeof(struct ethhdr);
-    if ((void *)(eth + 1) > data_end) {
+    if ((void *)(ip + 1) > data_end) {
         return XDP_PASS;
     }
     
