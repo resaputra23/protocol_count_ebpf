@@ -85,7 +85,7 @@ func printMap(bpfMap *ebpf.Map) {
     for iterator.Next(&key, &value) {
         //check jika value tidak 0, karena jika kosong artinya map juga kosong
 	if value != 0 && key != 0 {
-            log.Printf("Key: %d, Protocol Name: %s Value: %d\n", key, value)
+            log.Printf("Key: %d, Value: %d\n", key, value)
 	}
     }
     if err := iterator.Err(); err != nil {
